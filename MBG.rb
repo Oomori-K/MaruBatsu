@@ -13,7 +13,7 @@
 #勝敗を調べる用の配列
   check = [0,0,0,0,0,0,0,0,0]
 
-#マスがあいているかチェック
+#マスがあいているかチェック,入力が正しいかチェック
 def errorcheck(y,x,point)
   if(y>=3 || x>=3) then
     return false
