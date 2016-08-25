@@ -1,5 +1,4 @@
-#encoding: Shift_JIS
-class Display
+﻿class Display
   def output(point)
     print("    0     1     2\n")
     for y in 0..4

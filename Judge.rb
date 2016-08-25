@@ -1,66 +1,65 @@
-#encoding: Shift_JIS
-#’u‚­êŠ‚ª³‚µ‚¢‚©ƒ`ƒFƒbƒN
+ï»¿#ç½®ãå ´æ‰€ãŒæ­£ã—ã„ã‹ãƒã‚§ãƒƒã‚¯
 class Judge
   def error(y,x,check)
     if(y>=3 || x>=3) then
-      print("ƒGƒ‰[\n")
+      print("ã‚¨ãƒ©ãƒ¼\n")
       return false
     end
     if(check[x+3*y] == 0) then
       return true
     else
-      print("ƒGƒ‰[\n")
+      print("ã‚¨ãƒ©ãƒ¼\n")
       return false
     end
   end
 
-#Ÿ”sƒ`ƒFƒbƒN
+#å‹æ•—ãƒã‚§ãƒƒã‚¯
   def result(check)
-  #‰¡‚Ìƒ`ƒFƒbƒN
+  #æ¨ªã®ãƒã‚§ãƒƒã‚¯
     for i in 0..2
       if(check[i*3]+check[i*3+1]+check[i*3+2] == 3) then
-        print("›‚ÌŸ‚¿\n")
+        print("â—‹ã®å‹ã¡\n")
         return true
       elsif(check[i*3]+check[i*3+1]+check[i*3+2] == -3) then
-        print("~‚ÌŸ‚¿\n")
+        print("Ã—ã®å‹ã¡\n")
         return true
       end
     end
-  #c‚Ìƒ`ƒFƒbƒN
+  #ç¸¦ã®ãƒã‚§ãƒƒã‚¯
     for i in 0..2
       if(check[i]+check[3+i]+check[6+i] == 3) then
-        print("›‚ÌŸ‚¿\n")
+        print("â—‹ã®å‹ã¡\n")
         return true
       elsif(check[i]+check[3+i]+check[6+i] == -3) then
-        print("~‚ÌŸ‚¿\n")
+        print("Ã—ã®å‹ã¡\n")
         return true
       end
     end
 
-  #Î‚ß‚Ìƒ`ƒFƒbƒN
+  #æ–œã‚ã®ãƒã‚§ãƒƒã‚¯
     if(check[0]+check[4]+check[8] == 3) then
-      print("›‚ÌŸ‚¿\n")
+      print("â—‹ã®å‹ã¡\n")
       return true
     elsif(check[0]+check[4]+check[8] == -3) then
-      print("~‚ÌŸ‚¿\n")
+      print("Ã—ã®å‹ã¡\n")
       return true
     end
 
     if(check[2]+check[4]+check[6] == 3)
-      print("›‚ÌŸ‚¿\n")
+      print("â—‹ã®å‹ã¡\n")
       return true
     elsif(check[2]+check[4]+check[6] == -3) then
-      print("~‚ÌŸ‚¿\n")
+      print("Ã—ã®å‹ã¡\n")
       return true
     end
 
-  #ˆø‚«•ª‚¯ƒ`ƒFƒbƒN
+  #å¼•ãåˆ†ã‘ãƒã‚§ãƒƒã‚¯
     for i in 0..8
       if(check[i] == 0) then
         return false
       end
     end
-    print("ˆø‚«•ª‚¯\n")
+    print("å¼•ãåˆ†ã‘\n")
     return true
   end
 end

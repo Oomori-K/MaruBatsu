@@ -1,22 +1,21 @@
-#encoding: Shift_JIS
-require_relative "Update"
-require_relative "Display"
-require_relative "Search"
+ï»¿require './Update'
+require './Display'
+require './Judge'
 
-#‚Ç‚¿‚ç‚Ìƒ^[ƒ“‚©¦‚·(true›)
+#ã©ã¡ã‚‰ã®ã‚¿ãƒ¼ãƒ³ã‹ç¤ºã™(trueï¼â—‹)
   turn = true
-#•\¦—p‚Ì”z—ñ
-  point = [ [" ","@"," ","„ "," ","@"," ","„ "," ","@"],
-	    ["„Ÿ","„Ÿ","„©","„Ÿ","„Ÿ","„©","„Ÿ","„Ÿ"],
-	    [" ","@"," ","„ "," ","@"," ","„ "," ","@"],
-	    ["„Ÿ","„Ÿ","„©","„Ÿ","„Ÿ","„©","„Ÿ","„Ÿ"],
-	    [" ","@"," ","„ "," ","@"," ","„ "," ","@"]
+#è¡¨ç¤ºç”¨ã®é…åˆ—
+  point = [ [" ","ã€€"," ","â”‚"," ","ã€€"," ","â”‚"," ","ã€€"],
+	    ["â”€","â”€","â”¼","â”€","â”€","â”¼","â”€","â”€"],
+	    [" ","ã€€"," ","â”‚"," ","ã€€"," ","â”‚"," ","ã€€"],
+	    ["â”€","â”€","â”¼","â”€","â”€","â”¼","â”€","â”€"],
+	    [" ","ã€€"," ","â”‚"," ","ã€€"," ","â”‚"," ","ã€€"]
 	  ]
-#Ÿ”s‚ğ’²‚×‚é—p‚Ì”z—ñ
+#å‹æ•—ã‚’èª¿ã¹ã‚‹ç”¨ã®é…åˆ—
   check = [0,0,0,0,0,0,0,0,0]
 
 update = Update.new()
-search = Search.new()
+judge = Judge.new()
 display = Display.new()
 
 
@@ -24,15 +23,15 @@ display = Display.new()
 loop do
   display.output(point)
 
-  if(search.rcheck(check)) then
+  if(judge.result(check)) then
     break
   end
 
-  print("c²„")
+  print("ç¸¦è»¸ï¼")
   i=gets.to_i
-  print("‰¡²„")
+  print("æ¨ªè»¸ï¼")
   j=gets.to_i
-  if(search.echeck(i,j,check)) then
+  if(judge.error(i,j,check)) then
     update.memo(i,j,check,turn)
     update.write(i,j,point,turn)
     turn = !turn

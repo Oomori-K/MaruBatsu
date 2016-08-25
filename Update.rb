@@ -1,12 +1,11 @@
-#encoding: Shift_JIS
-class Update
+Ôªøclass Update
   def write(y,x,point,turn)
     y=y*2
     x=1+x*4
     if(turn) then
-      point[y][x] = "Åõ"
+      point[y][x] = "‚óã"
     else
-      point[y][x] = "Å~"
+      point[y][x] = "√ó"
     end
   end
 
