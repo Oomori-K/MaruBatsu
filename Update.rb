@@ -1,19 +1,11 @@
 ﻿class Update
   def write(y,x,point,turn)
     y=y*2
-    x=1+x*4
-    if(turn) then
-      point[y][x] = "○"
-    else
-      point[y][x] = "×"
-    end
+    x=1+4*x
+    turn ? point[y][x] = "○" :  point[y][x] = "×"
   end
 
   def memo(y,x,check,turn)
-    if(turn) then
-      check[x+y*3] = 1
-    else
-      check[x+y*3] = -1
-    end
+    turn ? check[x+y*3] = 1 : check[x+y*3] = -1
   end
 end

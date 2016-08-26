@@ -1,13 +1,9 @@
 ﻿class Display
   def output(point)
-    print("    0     1     2\n")
+    puts("    0    1    2")
     for y in 0..4
-      if(y%2 == 0) then
-        print(y/2," ")
-      else
-        print("  ")
-      end
-      for x in 0..9
+      y.even? ? print(y/2," ") : print("  ")
+      for x in 0..10
         print(point[y][x])
       end
       print("\n")
@@ -16,10 +12,6 @@
 
   #手番の表示
   def player_turn(turn)
-    if turn == true
-      puts "<Player 1>"
-    else
-      puts "<Player 2>"
-    end
+    turn ? (puts "<Player ○>") : (puts "<Player ×>")
   end
 end
