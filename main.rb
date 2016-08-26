@@ -18,9 +18,9 @@ update = Update.new()
 judge = Judge.new()
 display = Display.new()
 
-
-
 loop do
+
+  display.player_turn(turn)
   display.output(point)
 
   if(judge.result(check)) then

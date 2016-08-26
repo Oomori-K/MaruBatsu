@@ -13,4 +13,13 @@
       print("\n")
     end
   end
+
+  #手番の表示
+  def player_turn(turn)
+    if turn == true
+      puts "<Player 1>"
+    else
+      puts "<Player 2>"
+    end
+  end
 end
